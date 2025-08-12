@@ -6,6 +6,8 @@ nav {
   align-items: center;
   gap: 8rem;
   vertical-align: middle;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
   min-height: 8rem;
 }
 
@@ -22,6 +24,7 @@ nav {
 }
 
 .account-access {
+  position: relative;
   color: var(--text-color);
   font-weight: 600;
   font-size: .75rem;
@@ -32,6 +35,11 @@ nav {
   height: 100%;
   width: 50%;
   max-width: 400px;
+}
+
+nav p:hover {
+  color: var(--dark-purple);
+  cursor: pointer;
 }
 
 .account-access button, .boost button, .call-to-action button, #url-submit {
@@ -51,13 +59,47 @@ span {
 
 }
 
-@media (max-width: 540px) {
+.menu {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  z-index: 200;
+  min-width: 14rem;
+  min-height: 18rem;
+  background-color: var(--purple);
+  border-radius:.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.menu button {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.menu span{
+  height: 0.01rem;
+  width: 100%;
+}
+
+@media (max-width: 650px) {
   .account-access {
+    max-width: 2rem;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
-    padding-right: 1rem;
+    align-items: center;
     gap: .5rem;
+  }
+
+  .account-access:hover {
+    cursor: pointer;
   }
 }
 
@@ -378,6 +420,11 @@ footer {
   color: var(--text-color);
 }
 
+ li:hover {
+    color: var(--button-color);
+    cursor: pointer;
+  }
+
 .socials {
   display: flex;
   justify-content: space-evenly;
@@ -411,4 +458,5 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+
 }

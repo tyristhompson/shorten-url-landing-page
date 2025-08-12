@@ -18,6 +18,29 @@
   Login
   Sign Up
 
+  ## Menu!!!
+  <section class="menu">
+     <p>Features</p>
+     <p>Pricing</p>
+     <p>Resources</p>
+     <span></span>
+     <p>Login</p>
+      <button>Sign Up</button>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   More than just shorter links
 
   Build your brand’s recognition and get detailed insights 

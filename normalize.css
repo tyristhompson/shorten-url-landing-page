@@ -7,6 +7,7 @@ body{
   --dark-purple: hsl(260, 8%, 14%);
   --purple: hsl(257, 27%, 26%);
   --light-gray-bg: hsl(240, 10%, 96%);
+  --light-button-color: hsl(180, 50%, 76%);
 }
 
 p, h2, h3, h4 {
@@ -20,4 +21,14 @@ ul {
 
 button {
   padding: 0;
+}
+
+button:hover {
+  background-color: var(--light-button-color) !important;
+  cursor: pointer;
+}
+
+#url-submit:hover {
+  background-color: var(--light-button-color);
+  cursor: pointer;
 }
