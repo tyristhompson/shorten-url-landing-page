@@ -168,8 +168,8 @@ span {
 form {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 2em;
+  align-items: first baseline;
+  padding: 2em 2em 0em 2em;
   gap: 1rem;
   background: url(images/bg-shorten-desktop.svg);
   background-color: var(--purple);
@@ -178,18 +178,32 @@ form {
   background-position: center;
   background-size: cover;
   width: 80%;
-  min-height: 6rem;
+  min-height: 5rem;
   position: relative;
   top: -3rem;
   margin-bottom: -1.1rem;
 }
 
-#url-input {
+.enter-url {
+  display: flex;
+  flex-direction: column;
   width: 70%;
+}
+
+#url-input {
   height: 1.8rem;
   border: none;
   border-radius: .3em;
   padding: .4em 1em;
+}
+
+#url-input.error {
+  border: 2px solid var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: .8rem;
 }
 
 ::placeholder {
@@ -202,6 +216,10 @@ form {
   border-radius: .3em;
   height: 3.2em;
   width: 10em;
+}
+
+input:focus {
+  outline: none;
 }
 
 .url-links {
@@ -230,11 +248,12 @@ form {
 @media (max-width: 680px) {
   form {
     flex-direction: column;
-    padding: 2em;
+    align-items: center;
+    padding: 1em;
   }
 
-  #url-submit {
-    width: 77%;
+  #url-submit, .enter-url {
+    width: 90%;
   }
 }
 
