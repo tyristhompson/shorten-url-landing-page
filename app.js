@@ -117,7 +117,7 @@ async function getShortenedURL(urlObject) {
     })
 
     const data = await response.json();
-    displayURL(urlObject, data.result_url);
+    displayURL(urlObject.url, data.result_url);
   } 
   catch (error) {
     console.log(error)
@@ -125,8 +125,7 @@ async function getShortenedURL(urlObject) {
 }
 
 function displayURL(url, shortenedURL) {
-  const {url} = url;
-  
+
   urlLinkContainer = document.createElement('div');
   urlLinkContainer.classList = 'url-links';
   urlLinkContainer.innerHTML = `
