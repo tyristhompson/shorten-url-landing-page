@@ -7,8 +7,11 @@
 ## Goes in url-field section!!!
 
   <div class="url-links">
-    blank
+    <p></p>
+    <div class="copy-URL-container">
+      <p></p>
     <button class="copy">Copy</button>
+    </div>
   </div>
 
   Features

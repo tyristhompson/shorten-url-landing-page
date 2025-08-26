@@ -1,5 +1,6 @@
 const businessInfo = document.querySelector('.business-info');
 const accountAccess = document.querySelector('.account-access');
+const urlField = document.querySelector('.url-field');
 const form = document.querySelector('form');
 const input = document.querySelector('#url-input');
 const inputContainer = document.querySelector('.enter-url');
@@ -81,7 +82,11 @@ function isValidURL(url) {
   try {
     const validURL = new URL(url);
     const encodedURL = encodeURIComponent(validURL);
-    shortenURL(encodedURL);
+    const urlObject = {
+      url: encodedURL
+    };
+    const jsonURL = JSON.stringify(urlObject);
+    getShortenedURL(jsonURL);
 
   } catch (error) {
     errorMessage.textContent = `The URL you entered is not valid.`;
@@ -100,28 +105,40 @@ function removeError() {
   }
 }
 
-
-async function shortenURL(validURL) {
+async function getShortenedURL(urlObject) {
   try {
-    const response = await fetch(
-    "https://corsproxy.io/?" + "https://cleanuri.com/api/v1/shorten",
-    {
-      method: "POST",
+    const response = await fetch('https://cleanuri.com/api/v1/shorten', {
+      method: 'POST',
+      mode: 'cors',
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type":"application/json"
       },
-      body: new URLSearchParams({
-        url: validURL,
-      }),
-    }
-  );
+      body: urlObject
+    })
 
-  const data = await response.json();
-  console.log(data.result_url);
-} catch (error) {
-      console.log(error);
+    const data = await response.json();
+    displayURL(urlObject, data.result_url);
+  } 
+  catch (error) {
+    console.log(error)
   }
 }
+
+function displayURL(url, shortenedURL) {
+  const {url} = url;
+  
+  urlLinkContainer = document.createElement('div');
+  urlLinkContainer.classList = 'url-links';
+  urlLinkContainer.innerHTML = `
+  <p>${url}</p>
+    <div class="copy-URL-container">
+      <p>${shortenedURL}</p>
+    <button class="copy">Copy</button>
+    </div>`;
+
+  urlField.appendChild(urlLinkContainer);
+}
+
 
 
 
