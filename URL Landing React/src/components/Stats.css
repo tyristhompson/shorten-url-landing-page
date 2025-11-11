@@ -1,0 +1,145 @@
+/*Statistics*/
+
+.stats {
+  background-color: var(--light-gray-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats-title-container {
+  width: 50%;
+}
+
+.stats h3{
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: hsl(260, 8%, 14%);
+}
+
+
+.stats p {
+  margin-top: .6rem;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--text-color);
+}
+
+/* Customer Benefits */
+
+.benefits {
+  background-color: var(--light-gray-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 3rem 1.6rem 1.6rem 1.6rem;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-color: var(--white);
+  border-radius: .2rem;
+  width: 30%;
+  min-width: 12rem;
+  max-width: 250px;
+  min-height: 180px;
+  padding: 0 .6rem;
+  font-size: .7rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.benefit-card h4 {
+  color: hsl(260, 8%, 14%);
+  margin-bottom: .6rem;
+  font-size: 1rem;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(257, 27%, 26%);
+  padding: 1.4em;
+  border-radius: 50%;
+  width: 12%;
+  position: relative;
+  top: -1.6rem;
+  right: -.5rem;
+}
+
+.img-container img {
+  width: 90%;
+}
+
+.brand {
+  position: relative;
+  top: -1.6rem;
+}
+
+.customizable {
+  position: relative;
+  bottom: -1.6rem;
+}
+
+.blue-line {
+  background-color: var(--button-color);
+  width: 2.5%;
+  min-height: 6px;
+}
+
+@media (max-width: 680px) {
+  .benefits {
+    flex-direction: column;
+    padding-top: 3rem;
+  }
+
+  .benefit-card {
+    text-align: center;
+  }
+
+  .img-container {
+    right: -4.3rem;
+  }
+
+  .brand, .customizable {
+    position: static;
+  }
+
+  .blue-line {
+  background-color: var(--button-color);
+  width: 6px;
+  min-height: 3rem;
+}
+}
+
+/* Boost Link */
+
+.boost {
+  background: url(/assets/bg-boost-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--purple);
+  min-height: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+
+}
+
+.boost h3 {
+  margin-top: 2.5rem;
+  margin-bottom: .6rem;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.boost button {
+  padding: .6em 1.4em;
+  border-radius: 1.1em;
+}
