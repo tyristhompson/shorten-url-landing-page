@@ -10,7 +10,7 @@ const mediaQuery = window.matchMedia('(max-width: 650px)');
 
 function setNavStyles(mq) {
   if (mq.matches) {
-    accountAccess.innerHTML = `
+    accountAccess.innerHTML = ` 
     <span></span>
     <span></span>
     <span></span>`;
