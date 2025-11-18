@@ -8,7 +8,7 @@ const errorMessage = document.createElement('p');
 errorMessage.className = 'error-message';
 const mediaQuery = window.matchMedia('(max-width: 650px)');
 
-function setNavStyles(mq) {
+/* function setNavStyles(mq) {
   if (mq.matches) {
     accountAccess.innerHTML = ` 
     <span></span>
@@ -63,6 +63,7 @@ function openMenu() {
 setNavStyles(mediaQuery);
 mediaQuery.addEventListener('change', setNavStyles);
 form.addEventListener('submit', handleSubmit)
+*/
 
 function handleSubmit(e) {
   e.preventDefault();
